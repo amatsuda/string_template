@@ -2,3 +2,4 @@
 
 require_relative 'string_template/version'
 require_relative 'string_template/handler'
+require_relative 'string_template/railtie'
