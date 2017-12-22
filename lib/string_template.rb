@@ -1,5 +1,4 @@
-require "string_template/version"
+# frozen_string_literal: true
 
-module StringTemplate
-  # Your code goes here...
-end
+require_relative 'string_template/version'
+require_relative 'string_template/handler'
