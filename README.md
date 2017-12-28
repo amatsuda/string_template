@@ -1,8 +1,14 @@
 # StringTemplate
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/string_template`. To experiment with that code, run `bin/console` for an interactive prompt.
+The fastest template engine for Rails.
 
-TODO: Delete this and the text above, and describe your gem
+
+## Concept
+
+Ruby's String literal has such a powerful interpolation mechanism.
+It's almost a template engine, it's the fastest way to compose a String, and the syntax is already very well known by every Ruby programmer.
+Why don't we use this for the view files in our apps?
+
 
 ## Installation
 
@@ -14,21 +20,45 @@ gem 'string_template'
 
 And then execute:
 
-    $ bundle
+    % bundle
 
-Or install it yourself as:
 
-    $ gem install string_template
+## Syntax
 
-## Usage
+StringTemplate's syntax is based on Ruby's String interpolation.
+Plus, you can use Action View features.
+Please take a look at the tests for actual examples.
 
-TODO: Write usage instructions here
 
-## Development
+## Filenames
+By default, string\_template renders view files with `.string` extension, e.g. `app/views/posts/show.html.string`
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+## So, Should We Rewrite Everything with This?
+string\_template may not be the best choice as a general purpose template engine.
+It may sometimes be hard to express your template in a simple and maintainable code, especially when the template includes some business logic.
+So this template engine is recommended to use only for performance hotspots.
+For other templates, you might better use your favorite template engine such as haml, or haml, or haml.
+
+
+## Benchmark
+Following is the benchmark result showing how string\_template is faster than ERB, executed on Ruby trunk (2.6).
+This repo includes [this actual benchmarking script](https://github.com/amatsuda/string_template/blob/master/benchmark.rb) so that you can try it on your machine.
+
+```
+% ruby benchmark.rb
+Warming up --------------------------------------
+                 erb   986.519  i/100ms
+              string     1.614k i/100ms
+Calculating -------------------------------------
+                 erb    10.598k i/s -     49.325k in 4.654229s
+              string    19.550k i/s -     80.686k in 4.127156s
+
+Comparison:
+              string:     19550.0 i/s
+                 erb:     10597.9 i/s - 1.84x  slower
+```
+
 
 ## Contributing
 
