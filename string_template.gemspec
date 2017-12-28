@@ -3,12 +3,12 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "string_template"
-  spec.version       = '0.1.0'
+  spec.version       = '0.2.0'
   spec.authors       = ["Akira Matsuda"]
   spec.email         = ["ronnie@dio.jp"]
 
   spec.summary       = "A template engine for Rails, focusing on speed, using Ruby's String interpolation syntax"
-  spec.description   = 'String is your template engine'
+  spec.description   = %]string_template is a Rails plugin that adds an Action View handler for .string template that accepts Ruby's String literal that uses #{} notation for interpolating dynamic variables]
   spec.homepage      = 'https://github.com/amatsuda/string_template'
   spec.license       = "MIT"
 
