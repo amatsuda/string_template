@@ -27,7 +27,48 @@ And then execute:
 
 StringTemplate's syntax is based on Ruby's String interpolation.
 Plus, you can use Action View features.
-Please take a look at the tests for actual examples.
+
+### Example
+Here's an example of a scaffold generated ERB template, and its string\_template version.
+
+ERB:
+```
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @post.body %>
+</p>
+
+<%= link_to 'Edit', "/posts/#{@post.id}/edit" %> |
+<%= link_to 'Back', '/posts' %>
+```
+
+string\_template:
+```
+<p id="notice">#{ notice }</p>
+
+<p>
+  <strong>Title:</strong>
+  #{ @post.title }
+</p>
+
+<p>
+  <strong>Body:</strong>
+  #{ @post.body }
+</p>
+
+#{ link_to 'Edit', "/posts/#{@post.id}/edit" } |
+#{ link_to 'Back', '/posts' }
+```
+
+# More Examples
+Please take a look at [the tests](https://github.com/amatsuda/string_template/blob/master/test/string_template_test.rb) for actual examples.
 
 
 ## Filenames
