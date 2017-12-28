@@ -1,10 +1,9 @@
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "string_template/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "string_template"
-  spec.version       = StringTemplate::VERSION
+  spec.version       = '0.1.0'
   spec.authors       = ["Akira Matsuda"]
   spec.email         = ["ronnie@dio.jp"]
 
