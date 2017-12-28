@@ -2,8 +2,12 @@
 
 module StringTemplate
   class Handler
-    def self.call(*)
-      raise "Don't call me!"
+    def self.call(template)
+      "%Q[#{template.source}]"
+    end
+
+    def self.handles_encoding?
+      true
     end
   end
 end
