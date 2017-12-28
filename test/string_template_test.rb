@@ -45,6 +45,10 @@ class StringTemplateTest < Minitest::Test
        end}'
   end
 
+  def test_locals
+    assert_render 'hello', '#{foo}', locals: {foo: 'hello'}
+  end
+
   def test_render_partial
     result = @view.render(template: 'main', handlers: 'string')
     assert_equal 'hello, world!', result.strip
