@@ -1,0 +1,1 @@
+hello, #{ render('partial') }
