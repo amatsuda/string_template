@@ -51,16 +51,16 @@ ERB:
 
 string\_template:
 ```
-<p id="notice">#{ notice }</p>
+<p id="notice">#{h notice }</p>
 
 <p>
   <strong>Title:</strong>
-  #{ @post.title }
+  #{h @post.title }
 </p>
 
 <p>
   <strong>Body:</strong>
-  #{ @post.body }
+  #{h @post.body }
 </p>
 
 #{ link_to 'Edit', "/posts/#{@post.id}/edit" } |
