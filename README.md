@@ -12,15 +12,13 @@ Why don't we use this for the view files in our apps?
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your Rails application's Gemfile:
 
 ```ruby
 gem 'string_template'
 ```
 
-And then execute:
-
-    % bundle
+And then bundle.
 
 
 ## Syntax
@@ -71,13 +69,18 @@ string\_template:
 Please take a look at [the tests](https://github.com/amatsuda/string_template/blob/master/test/string_template_test.rb) for actual examples.
 
 
-## Filenames
+## File Names
 By default, string\_template renders view files with `.string` extension, e.g. `app/views/posts/show.html.string`
+
+
+## Security
+string\_template does not automatically `html_escape`. Don't forget to explicitly call `h()` when interpolating possibly HTML unsafe strings, like we used to do in pre Rails 3 era.
 
 
 ## So, Should We Rewrite Everything with This?
 string\_template may not be the best choice as a general purpose template engine.
 It may sometimes be hard to express your template in a simple and maintainable code, especially when the template includes some business logic.
+You need to care about security.
 So this template engine is recommended to use only for performance hotspots.
 For other templates, you might better use your favorite template engine such as haml, or haml, or haml.
 
