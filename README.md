@@ -67,7 +67,7 @@ string\_template:
 #{ link_to 'Back', '/posts' }
 ```
 
-# More Examples
+### More Examples
 Please take a look at [the tests](https://github.com/amatsuda/string_template/blob/master/test/string_template_test.rb) for actual examples.
 
 
