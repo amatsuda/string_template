@@ -2,8 +2,8 @@
 
 module StringTemplate
   class Handler
-    def self.call(template)
-      "%Q\0#{template.source}\0"
+    def self.call(template, source = nil)
+      "%Q\0#{source || template.source}\0"
     end
 
     def self.handles_encoding?
