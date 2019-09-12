@@ -4,7 +4,7 @@ require 'test_helper'
 
 class StringTemplateTest < Minitest::Test
   def setup
-    @view = Class.new(ActionView::Base).new(__dir__)
+    @view = Class.new(ActionView::Base).new(ActionView::LookupContext.new(__dir__))
     super
   end
 
