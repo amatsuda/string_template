@@ -10,7 +10,7 @@ Benchmark.driver do |x|
     StringTemplate::Railtie.run_initializers
     require 'action_view/base'
 
-    (view = Class.new(ActionView::Base).new('.')).instance_variable_set(:@world, 'world!')
+    (view = Class.new(ActionView::Base).new(ActionView::LookupContext.new(''))).instance_variable_set(:@world, 'world!')
   }
   x.report 'erb', %{ view.render(template: 'hello', handlers: 'erb') }
   x.report 'string', %{ view.render(template: 'hello', handlers: 'string') }
