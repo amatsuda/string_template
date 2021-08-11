@@ -4,7 +4,11 @@ require 'test_helper'
 
 class StringTemplateTest < Minitest::Test
   def setup
-    @view = Class.new(ActionView::Base).new(ActionView::LookupContext.new(__dir__))
+    @view = if ActionView::VERSION::MAJOR >= 6
+      Class.new(ActionView::Base.with_empty_template_cache).with_view_paths([__dir__])
+    else
+      Class.new(ActionView::Base).new(ActionView::LookupContext.new(__dir__))
+    end
     super
   end
 
