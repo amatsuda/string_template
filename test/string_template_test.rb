@@ -54,7 +54,7 @@ class StringTemplateTest < Minitest::Test
   end
 
   def test_render_partial
-    result = @view.render(template: 'main', handlers: 'string')
+    result = @view.render(template: 'main', handlers: :string)
     assert_equal 'hello, world!', result.strip
   end
 end
