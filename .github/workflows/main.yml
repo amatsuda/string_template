@@ -52,6 +52,7 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby_version }}
           bundler-cache: true
+          rubygems: ${{ matrix.ruby_version < '2.6' && 'default' || 'latest' }}
           bundler: ${{ matrix.rails_version == '4.2' && '1' || 'latest' }}
         continue-on-error: ${{ (matrix.ruby_version == 'ruby-head') || (matrix.allow_failures == 'true') }}
 
