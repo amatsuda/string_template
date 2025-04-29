@@ -47,6 +47,10 @@ jobs:
           - ruby_version: '2.5'
             rails_version: '4.2'
 
+        exclude:
+          - ruby_version: '3.1'
+            rails_version: edge
+
     runs-on: ubuntu-24.04
 
     env:
