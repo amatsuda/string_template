@@ -7,9 +7,12 @@ jobs:
     strategy:
       matrix:
         ruby_version: [ruby-head, '3.2', '3.1']
-        rails_version: ['edge', '7.0']
+        rails_version: ['edge', '8.0', '7.2', '7.1', '7.0']
 
         include:
+          - ruby_version: '3.0'
+            rails_version: '7.1'
+
           - ruby_version: '3.0'
             rails_version: '7.0'
           - ruby_version: '2.7'
@@ -50,6 +53,9 @@ jobs:
         exclude:
           - ruby_version: '3.1'
             rails_version: edge
+
+          - ruby_version: '3.1'
+            rails_version: '8.0'
 
     runs-on: ubuntu-24.04
 
