@@ -12,3 +12,5 @@ elsif ENV['RAILS_VERSION']
 end
 
 gem 'logger' if RUBY_VERSION >= '3.5'
+gem 'bigdecimal' if RUBY_VERSION >= '3.4'
+gem 'mutex_m' if RUBY_VERSION >= '3.4'
